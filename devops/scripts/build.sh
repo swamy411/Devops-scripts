@@ -9,12 +9,12 @@ CI_PROJECT_DIR=$1
 ignore_list=("devops")
 
 # #Identify the Affected Lambdas
-# mapfile -t lines < <(git diff-tree --no-commit-id --name-only -r "${COMMIT_SHA}" | grep ./ | cut -d/ -f1 | uniq )
-# affected_folders=("$(printf '%s\n' "${lines[@]}" | sort -r)")
-# echo "Affected Folders : ${affected_folders[*]}"
+mapfile -t lines < <(git diff-tree --no-commit-id --name-only -r "${COMMIT_SHA}" | grep ./ | cut -d/ -f1 | uniq )
+affected_folders=("$(printf '%s\n' "${lines[@]}" | sort -r)")
+echo "Affected Folders : ${affected_folders[*]}"
 
 #Testing
-affected_folders=("lambda-B")
+#affected_folders=("lambda-B")
 echo "Affected Folders : ${affected_folders[*]}"
 
 build_all_lambdas=false
