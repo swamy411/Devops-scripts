@@ -2,7 +2,7 @@
 
 #INPUTS
 CI_PROJECT_DIR=$1
-#COMMIT_SHA=$2
+COMMIT_SHA=$( git rev-parse HEAD )
 
 #DEFAULTS
 #Ignore Other Folders to Ignore During Build.
