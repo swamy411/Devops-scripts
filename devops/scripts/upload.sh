@@ -22,7 +22,6 @@ do
     echo "$lambda : $VERSION_ID"
     sed -i "s/<${lambda}-s3-version>/${VERSION_ID}/g" "${CI_PROJECT_DIR}/devops/cloudformation/lambdas.yaml"
 done;
-exit
 
-echo "Uploading cloudformation files"
-aws s3 cp "${CI_PROJECT_DIR}/devops/cloudformation/" "s3://${S3_BUCKET}/" --recursive
+# echo "Uploading cloudformation files"
+# aws s3 cp "${CI_PROJECT_DIR}/devops/cloudformation/" "s3://${S3_BUCKET}/" --recursive
